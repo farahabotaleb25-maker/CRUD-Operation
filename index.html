@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRUD</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <section class="w-75 mx-auto p-4 rounded-3">
+    <h2 class="text-center mb-4">CRUD Operation</h2>
+    <div class="form-floating mb-3">
+      <input oninput="validateName()" type="text" class="form-control" id="ProductName" placeholder="Product Name">
+      <label for="ProductName">Product Name</label>
+      <p id="alertmsg" class="alert alert-danger d-none my-2">Site name must contain at least 3 characters</p>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="ProductPrice" placeholder="Product Price">
+      <label for="ProductPrice">Product Price</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="ProductCategory" placeholder="Product Category">
+      <label for="ProductCategory">Product Category</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="ProductDescription" placeholder="Product Description">
+      <label for="ProductDescription">Product Description</label>
+    </div>
+    <div class="mb-3">
+      <input id="productImage" type="file" class="form-control" accept="image/*">
+    </div>
+ <div class="text-center">
+  <button id="addbtn" type="button" onclick="AddProduct()" class="btn btn-primary">Add Product</button>
+  <button id="updatebtn" type="button" onclick="updateProduct()" class="btn btn-success d-none">save</button>
+</div>
+
+    <div class="search-box mx-auto my-4 text-center">
+      <input type="text" id="SearchInput" oninput="SearchProduct()" placeholder="Search..." />
+    </div>
+    <div class="container my-5">
+      <div class="row" id="productTableBody"></div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
